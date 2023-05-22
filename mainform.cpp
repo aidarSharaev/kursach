@@ -4,7 +4,6 @@ mainform::mainform(QWidget *parent)
 		: QWidget{parent}
 	{
 	this->resize(800, 600);
-
 	name = new QLabel("База данных \"Транспортная компания\"\nШараева Айдара 4207", this);
 	btn_chief = new QPushButton("Транспортный отдел", this);
 	btn_boss = new QPushButton("Изменение структуры работы", this);
@@ -26,6 +25,10 @@ mainform::mainform(QWidget *parent)
 	btn_back->setGeometry(QRect(680, 530, 80, 30));
 
 	QObject::connect(this->btn_back, SIGNAL(clicked()), parent, SLOT(close()));
+	QObject::connect(this->btn_empl, SIGNAL(clicked()), parent, SLOT(openEmpCar()));
+	QObject::connect(this->btn_chief, SIGNAL(clicked()), parent, SLOT(openChief()));
+	QObject::connect(this->btn_boss, SIGNAL(clicked()), parent, SLOT(openBoss()));
+
 	}
 
 mainform::~mainform()

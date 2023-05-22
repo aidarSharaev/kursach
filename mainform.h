@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QFont>
+#include <QMainWindow>
 
 class mainform : public QWidget
 	{
@@ -14,6 +15,7 @@ public:
 	~mainform();
 
 private:
+	QMainWindow* m_main;
 	QLabel* name;
 	QPushButton* btn_chief;
 	QPushButton* btn_boss;
